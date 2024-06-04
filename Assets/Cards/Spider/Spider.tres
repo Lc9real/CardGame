@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=5 format=3 uid="uid://bxnl8gpujxa2h"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/CardData.gd" id="1_4scdd"]
+[ext_resource type="PackedScene" uid="uid://d2ormk387uenb" path="res://Assets/Cards/Spider/spider.tscn" id="1_nli58"]
+[ext_resource type="Script" path="res://Assets/Cards/Spider/Spider.gd" id="1_ydorm"]
+[ext_resource type="Texture2D" uid="uid://di6cq6ijj3gw2" path="res://Assets/Cards/Spider/spider.png" id="2_fxix7"]
+
+[resource]
+script = ExtResource("1_4scdd")
+cardID = 1
+cardName = "Spider"
+description = "Just a Fucking Spider"
+image = ExtResource("2_fxix7")
+cardLevel = 5
+MagicCard = false
+instantEffect = false
+selectBeforActivation = false
+passive = false
+type = 0
+health = 500.0
+firstAttackName = "Bite"
+firstAttackDescription = "Bites Enemy and Gives Poison"
+firstAttackDamage = 50.0
+firstAttackRange = [[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0], [0, 0, 1, 0, 1, 0, 0], [0, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]]
+firstAttackCost = 1
+secondAttackName = "Web"
+secondAttackDescription = "Restricts Enemy Movement"
+secondAttackDamage = 0.0
+secondAttackRange = [[1, 1, 1, 1, 1, 1, 1], [0, 1, 1, 1, 1, 1, 0], [0, 0, 1, 1, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]]
+secondAttackCost = 2
+thirdAttackName = ""
+thirdAttackDescription = ""
+thirdAttackDamage = 0.0
+thirdAttackRange = [[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]]
+thirdAttackCost = 0
+chracterNode = ExtResource("1_nli58")
+attackScript = ExtResource("1_ydorm")
+movement = [[0, 0, 1, 0, 0], [0, 1, 1, 1, 0], [1, 1, 0, 1, 1], [0, 1, 1, 1, 0], [0, 0, 1, 0, 0]]

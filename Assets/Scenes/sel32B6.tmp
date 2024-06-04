@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddjjvavs5710r"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/selectHighlighter.gd" id="1_tety1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hsea6"]
+albedo_color = Color(0, 0, 1, 1)
+emission_enabled = true
+emission = Color(0, 0, 1, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_gdl1f"]
+material = SubResource("StandardMaterial3D_hsea6")
+size = Vector3(0.5, 2, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sfbg4"]
+size = Vector3(1.8, 1, 1.8)
+
+[node name="selectHighlighter" type="Node3D"]
+script = ExtResource("1_tety1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_gdl1f")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_sfbg4")
+
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]

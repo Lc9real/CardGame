@@ -1,0 +1,102 @@
+[gd_scene load_steps=8 format=3 uid="uid://4t72oxiy3cba"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/game_manager.gd" id="1_1bxsl"]
+[ext_resource type="PackedScene" uid="uid://d006kdwutg2d7" path="res://Assets/Scenes/attack_buttons.tscn" id="1_us0y8"]
+[ext_resource type="PackedScene" uid="uid://26gn2mpkntdh" path="res://Assets/Scenes/field.tscn" id="2_thbnb"]
+[ext_resource type="Script" path="res://Assets/Scripts/TurnText.gd" id="3_j05s0"]
+[ext_resource type="Script" path="res://Assets/Scripts/NextTurn.gd" id="4_bjh7h"]
+
+[sub_resource type="Environment" id="Environment_epyqw"]
+background_energy_multiplier = 0.0
+fog_light_color = Color(0, 1, 0, 1)
+fog_light_energy = 0.05
+fog_density = 0.0
+volumetric_fog_density = 0.01
+volumetric_fog_albedo = Color(0, 0, 0, 1)
+volumetric_fog_emission_energy = 0.5
+volumetric_fog_length = 40.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3bmdn"]
+size = Vector3(2, 1, 12)
+
+[node name="Game" type="Node3D"]
+
+[node name="AttackButtons" parent="." instance=ExtResource("1_us0y8")]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_1bxsl")
+deck1 = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 1, 2])
+deck2 = Array[int]([1, 2, 3, 4, 5, 6, 7, 8, 1, 2])
+
+[node name="Field" parent="." instance=ExtResource("2_thbnb")]
+unique_name_in_owner = true
+transform = Transform3D(-1.74846e-07, 0, -4, 0, 4, 0, 4, 0, -1.74846e-07, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0.793353, -0.608761, 0, 0.608761, 0.793353, 1, 3.46786e-08, -2.66098e-08, -25, 20, 0)
+environment = SubResource("Environment_epyqw")
+doppler_tracking = 1
+fov = 60.0
+size = 9.206
+near = 1.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+custom_minimum_size = Vector2(1000, 100)
+layout_mode = 1
+offset_right = 1000.0
+offset_bottom = 100.0
+theme_override_font_sizes/normal_font_size = 66
+bbcode_enabled = true
+text = "Draw"
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+structured_text_bidi_override = 1
+structured_text_bidi_override_options = [null]
+script = ExtResource("3_j05s0")
+
+[node name="Button" type="Button" parent="Control"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1480.0
+offset_top = 940.0
+offset_right = 1880.0
+offset_bottom = 1040.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 56
+action_mode = 0
+text = "Next Turn"
+script = ExtResource("4_bjh7h")
+
+[node name="Hand1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.52, 10, 0)
+
+[node name="Area3D" type="Area3D" parent="Hand1" groups=["Hand1"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hand1/Area3D"]
+shape = SubResource("BoxShape3D_3bmdn")
+
+[node name="Hand2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.52, 10, 0)
+
+[node name="Area3D" type="Area3D" parent="Hand2" groups=["Hand2"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hand2/Area3D"]
+shape = SubResource("BoxShape3D_3bmdn")
+
+[connection signal="button_down" from="Control/Button" to="Control/Button" method="_on_button_down"]

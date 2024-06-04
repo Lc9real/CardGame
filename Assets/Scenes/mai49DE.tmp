@@ -1,0 +1,146 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2i5fshnfrnmi"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/DeckCreator.gd" id="1_7eqg0"]
+[ext_resource type="Script" path="res://Assets/Scripts/mainScreen.gd" id="1_seelx"]
+
+[sub_resource type="Theme" id="Theme_yi3nr"]
+
+[sub_resource type="Theme" id="Theme_47pyo"]
+
+[node name="MainScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_seelx")
+
+[node name="DeckCreator" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_7eqg0")
+
+[node name="AllCards" type="Control" parent="DeckCreator"]
+layout_mode = 1
+anchor_left = 0.6
+anchor_top = 0.15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="DeckCreator/AllCards"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -30.0
+offset_right = -3.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.372549, 0.372549, 0.372549, 0.980392)
+
+[node name="AllCards" type="ScrollContainer" parent="DeckCreator/AllCards"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="All Cards" type="GridContainer" parent="DeckCreator/AllCards/AllCards" groups=["All Cards"]]
+layout_mode = 2
+columns = 5
+
+[node name="Deck" type="Control" parent="DeckCreator"]
+layout_mode = 1
+anchor_top = 0.15
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="DeckCreator/Deck"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -30.0
+offset_right = 20.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.372549, 0.372549, 0.372549, 0.980392)
+
+[node name="Deck" type="ScrollContainer" parent="DeckCreator/Deck"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Deck" type="GridContainer" parent="DeckCreator/Deck/Deck" groups=["Deck"]]
+layout_mode = 2
+mouse_filter = 0
+columns = 5
+
+[node name="FileName" type="LineEdit" parent="DeckCreator"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 25.0
+offset_right = 545.0
+offset_bottom = 85.0
+theme = SubResource("Theme_yi3nr")
+theme_override_font_sizes/font_size = 32
+placeholder_text = "Enter Deck Name"
+clear_button_enabled = true
+
+[node name="Save" type="Button" parent="DeckCreator"]
+layout_mode = 0
+offset_left = 570.0
+offset_top = 25.0
+offset_right = 750.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 32
+text = "Save"
+
+[node name="Load" type="Button" parent="DeckCreator"]
+offset_left = 765.0
+offset_top = 25.0
+offset_right = 945.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 32
+text = "Load
+"
+
+[node name="Deck Editor" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -320.0
+offset_top = 25.0
+offset_right = -70.0
+offset_bottom = 100.0
+grow_horizontal = 0
+theme = SubResource("Theme_47pyo")
+theme_override_font_sizes/font_size = 32
+text = "Deck Editor"
+
+[connection signal="mouse_entered" from="DeckCreator/Deck/Deck" to="DeckCreator" method="_on_deck_mouse_entered"]
+[connection signal="mouse_exited" from="DeckCreator/Deck/Deck" to="DeckCreator" method="_on_deck_mouse_exited"]
+[connection signal="pressed" from="DeckCreator/Save" to="DeckCreator" method="_on_save_pressed"]
+[connection signal="pressed" from="DeckCreator/Load" to="DeckCreator" method="_on_load_pressed"]
+[connection signal="pressed" from="Deck Editor" to="." method="_on_deck_editor_pressed"]

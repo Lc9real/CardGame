@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=5 format=3 uid="uid://bk1jmqaqq6oo0"]
+
+[ext_resource type="PackedScene" uid="uid://bge1bnbwrshgi" path="res://Assets/Cards/Skeleton/Skeleton.tscn" id="1_0c7g0"]
+[ext_resource type="Texture2D" uid="uid://bpmghtjf15ygb" path="res://Assets/Cards/Skeleton/skeleton.png" id="1_bj704"]
+[ext_resource type="Script" path="res://Assets/Cards/Skeleton/Skeleton.gd" id="1_vcymg"]
+[ext_resource type="Script" path="res://Assets/Scripts/CardData.gd" id="2_b2r5v"]
+
+[resource]
+script = ExtResource("2_b2r5v")
+cardID = 4
+cardName = "Skeleton"
+description = ""
+image = ExtResource("1_bj704")
+cardLevel = 2
+MagicCard = false
+instantEffect = false
+selectBeforActivation = false
+passive = false
+type = 4
+health = 200.0
+firstAttackName = "Punch"
+firstAttackDescription = "Punches the Enemy"
+firstAttackDamage = 10.0
+firstAttackRange = [[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 1, 1, 1, 0, 0], [0, 0, 1, 0, 1, 0, 0], [0, 0, 1, 1, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]]
+firstAttackCost = 1
+secondAttackName = "Bone Attack"
+secondAttackDescription = "Stabs Enemy with his own Bone Self inflicted Damage 50"
+secondAttackDamage = 100.0
+secondAttackRange = [[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 1, 1, 1, 0, 0], [0, 0, 1, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 1, 1, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0]]
+secondAttackCost = 2
+thirdAttackName = ""
+thirdAttackDescription = ""
+thirdAttackDamage = 0.0
+thirdAttackRange = [[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]]
+thirdAttackCost = 0
+chracterNode = ExtResource("1_0c7g0")
+attackScript = ExtResource("1_vcymg")
+movement = [[1, 0, 0, 0, 1, 0, 0, 0, 1], [0, 1, 0, 0, 1, 0, 0, 1, 0], [0, 0, 1, 0, 1, 0, 1, 0, 0], [0, 0, 0, 1, 1, 1, 0, 0, 0], [1, 1, 1, 1, 0, 1, 1, 1, 1], [0, 0, 0, 1, 1, 1, 0, 0, 0], [0, 0, 1, 0, 1, 0, 1, 0, 0], [0, 1, 0, 0, 1, 0, 0, 1, 0], [1, 0, 0, 0, 1, 0, 0, 0, 1]]

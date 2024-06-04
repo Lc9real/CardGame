@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://4t72oxiy3cba"]
+
+[ext_resource type="PackedScene" uid="uid://lktvobedvt53" path="res://Assets/Scenes/DefaultCard.tscn" id="1_74an8"]
+[ext_resource type="Script" path="res://Assets/Scripts/game_manager.gd" id="1_e5n15"]
+[ext_resource type="PackedScene" uid="uid://26gn2mpkntdh" path="res://Assets/Scenes/field.tscn" id="1_v15nq"]
+[ext_resource type="Resource" uid="uid://bxnl8gpujxa2h" path="res://Assets/Cards/Spider/Spider.tres" id="2_en0l7"]
+
+[node name="GameManager" type="Node3D"]
+script = ExtResource("1_e5n15")
+
+[node name="Card" parent="." instance=ExtResource("1_74an8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 14)
+data = ExtResource("2_en0l7")
+
+[node name="Field" parent="." instance=ExtResource("1_v15nq")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.608761, 0.793353, 0, -0.793353, 0.608761, 0, 20, 25)
+doppler_tracking = 1
+fov = 60.0
+size = 9.206
+near = 1.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)

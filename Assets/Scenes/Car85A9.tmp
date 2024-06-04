@@ -1,0 +1,152 @@
+[gd_scene load_steps=6 format=3 uid="uid://lktvobedvt53"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Card.gd" id="1_1tb51"]
+[ext_resource type="Texture2D" uid="uid://b3gamx7prjf07" path="res://Assets/Textures/131156450-checkered-chequered-seamless-pattern-squares-seamless-pattern-texture-checkerboard-chess-board.png" id="2_eme3d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vf0ns"]
+size = Vector3(3, 0.03, 4.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lf5m7"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tuct4"]
+material = SubResource("StandardMaterial3D_lf5m7")
+size = Vector3(3, 0.03, 4.5)
+
+[node name="Card" type="Node3D"]
+script = ExtResource("1_1tb51")
+
+[node name="Rotation" type="Node3D" parent="."]
+transform = Transform3D(4.37114e-08, -3.82137e-15, -1, -8.74228e-08, -1, 0, -1, 8.74228e-08, -4.37114e-08, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="Rotation"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rotation/Area3D"]
+shape = SubResource("BoxShape3D_vf0ns")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rotation"]
+mesh = SubResource("BoxMesh_tuct4")
+skeleton = NodePath("../..")
+
+[node name="Image" type="Sprite3D" parent="Rotation"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.02, -0.85)
+pixel_size = 0.005
+texture = ExtResource("2_eme3d")
+
+[node name="Name" type="Label3D" parent="Rotation"]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, 0.5, 0, -0.5, -2.18557e-08, 0, 0.02, -2.1)
+double_sided = false
+outline_render_priority = -64
+text = "Name"
+font_size = 96
+
+[node name="Description" type="Label3D" parent="Rotation"]
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, 0.25, 0, -0.25, -1.09278e-08, 0, 0.02, 0.3)
+double_sided = false
+outline_render_priority = -64
+text = "Desctription
+"
+font_size = 80
+vertical_alignment = 0
+autowrap_mode = 1
+width = 2000.0
+
+[node name="Attack1" type="Label3D" parent="Rotation"]
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, 0.25, 0, -0.25, -1.09278e-08, -1.3, 0.02, 0.65)
+double_sided = false
+outline_render_priority = -64
+text = "Attack 1  Name
+"
+font_size = 96
+horizontal_alignment = 0
+
+[node name="Attack1 Damage" type="Label3D" parent="Rotation"]
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, 0.25, 0, -0.25, -1.09278e-08, 1.15, 0.02, 0.75)
+double_sided = false
+outline_render_priority = -64
+text = "0
+"
+font_size = 128
+horizontal_alignment = 0
+
+[node name="Attack1 Description" type="Label3D" parent="Rotation"]
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, 0.25, 0, -0.25, -1.09278e-08, -1.3, 0.02, 0.7)
+double_sided = false
+outline_render_priority = -64
+text = "Attack 1  Description "
+font_size = 80
+horizontal_alignment = 0
+vertical_alignment = 0
+autowrap_mode = 1
+width = 1750.0
+
+[node name="Attack2" type="Label3D" parent="Rotation"]
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, 0.25, 0, -0.25, -1.09278e-08, -1.3, 0.02, 1.15)
+double_sided = false
+outline_render_priority = -64
+text = "Attack 2  Name
+"
+font_size = 96
+horizontal_alignment = 0
+
+[node name="Attack2 Damage" type="Label3D" parent="Rotation"]
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, 0.25, 0, -0.25, -1.09278e-08, 1.15, 0.02, 1.25)
+double_sided = false
+outline_render_priority = -64
+text = "0
+"
+font_size = 128
+horizontal_alignment = 0
+
+[node name="Attack2 Description" type="Label3D" parent="Rotation"]
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, 0.25, 0, -0.25, -1.09278e-08, -1.3, 0.02, 1.19963)
+double_sided = false
+outline_render_priority = -64
+text = "Attack 2  Description "
+font_size = 80
+horizontal_alignment = 0
+vertical_alignment = 0
+autowrap_mode = 1
+width = 1750.0
+
+[node name="Attack3" type="Label3D" parent="Rotation"]
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, 0.25, 0, -0.25, -1.09278e-08, -1.2969, 0.0179131, 1.65185)
+double_sided = false
+outline_render_priority = -64
+text = "Attack 3 Name
+"
+font_size = 96
+horizontal_alignment = 0
+
+[node name="Attack3 Damage" type="Label3D" parent="Rotation"]
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, 0.25, 0, -0.25, -1.09278e-08, 1.15, 0.02, 1.75)
+double_sided = false
+outline_render_priority = -64
+text = "0
+"
+font_size = 128
+horizontal_alignment = 0
+
+[node name="Attack3 Description" type="Label3D" parent="Rotation"]
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, 0.25, 0, -0.25, -1.09278e-08, -1.3, 0.02, 1.7)
+double_sided = false
+outline_render_priority = -64
+text = "Attack 3  Description "
+font_size = 80
+horizontal_alignment = 0
+vertical_alignment = 0
+autowrap_mode = 1
+width = 1750.0
+
+[node name="Health" type="Label3D" parent="Rotation"]
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, 0.25, 0, -0.25, -1.09278e-08, 0, 0.02, 1.85)
+double_sided = false
+outline_render_priority = -64
+text = "0
+"
+font_size = 220
+vertical_alignment = 0
+autowrap_mode = 1
+width = 2000.0
+
+[connection signal="input_event" from="Rotation/Area3D" to="." method="_on_area_3d_input_event"]

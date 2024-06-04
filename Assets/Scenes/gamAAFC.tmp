@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://4t72oxiy3cba"]
+
+[ext_resource type="PackedScene" uid="uid://lktvobedvt53" path="res://Assets/Scenes/Card.tscn" id="1_74an8"]
+[ext_resource type="Script" path="res://Assets/Scripts/game_manager.gd" id="1_e5n15"]
+[ext_resource type="PackedScene" uid="uid://26gn2mpkntdh" path="res://Assets/Scenes/field.tscn" id="1_v15nq"]
+[ext_resource type="Resource" uid="uid://bxnl8gpujxa2h" path="res://Assets/Cards/Spider/Spider.tres" id="2_en0l7"]
+[ext_resource type="PackedScene" uid="uid://j8at06jdxqph" path="res://Assets/Scenes/highlighter.tscn" id="5_dwsjd"]
+
+[sub_resource type="Environment" id="Environment_epyqw"]
+background_energy_multiplier = 0.0
+fog_light_color = Color(0, 1, 0, 1)
+fog_light_energy = 0.05
+fog_density = 0.0
+volumetric_fog_density = 0.01
+volumetric_fog_albedo = Color(0, 0, 0, 1)
+volumetric_fog_emission_energy = 0.5
+volumetric_fog_length = 40.0
+
+[node name="Game" type="Node3D"]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_e5n15")
+
+[node name="Card" parent="." instance=ExtResource("1_74an8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -2)
+data = ExtResource("2_en0l7")
+
+[node name="Field" parent="." instance=ExtResource("1_v15nq")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0.793353, -0.608761, 0, 0.608761, 0.793353, 1, 3.46786e-08, -2.66098e-08, -25, 20, 0)
+environment = SubResource("Environment_epyqw")
+doppler_tracking = 1
+fov = 60.0
+size = 9.206
+near = 1.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+
+[node name="Highlighter" parent="." instance=ExtResource("5_dwsjd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -7)

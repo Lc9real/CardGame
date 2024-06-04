@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=5 format=3 uid="uid://ckm38vowknlt8"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/CardData.gd" id="1_2ry3g"]
+[ext_resource type="Script" path="res://Assets/Cards/Angel/Angel.gd" id="1_l4pnm"]
+[ext_resource type="Texture2D" uid="uid://bakht81vfxnoq" path="res://Assets/Cards/Angel/Angel.png" id="1_y6adp"]
+[ext_resource type="PackedScene" uid="uid://dyel4wkww86fc" path="res://Assets/Cards/Angel/Angel.tscn" id="2_o7jfw"]
+
+[resource]
+script = ExtResource("1_2ry3g")
+cardID = 2
+cardName = "Angel"
+description = "An Angel send from the Heavens"
+image = ExtResource("1_y6adp")
+cardLevel = 10
+MagicCard = false
+instantEffect = false
+selectBeforActivation = false
+passive = false
+type = 3
+health = 1000.0
+firstAttackName = "Blinding Light"
+firstAttackDescription = "A Light so bright that it burns"
+firstAttackDamage = 100.0
+firstAttackRange = [[1, 0, 0, 1, 0, 0, 1], [0, 1, 0, 1, 0, 1, 0], [0, 0, 1, 1, 1, 0, 0], [1, 1, 1, 0, 1, 1, 1], [0, 0, 1, 1, 1, 0, 0], [0, 1, 0, 1, 0, 1, 0], [1, 0, 0, 1, 0, 0, 1]]
+firstAttackCost = 1
+secondAttackName = "Healing Hand"
+secondAttackDescription = "Angel Healing power"
+secondAttackDamage = -100.0
+secondAttackRange = [[1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 0, 1, 1]]
+secondAttackCost = 2
+thirdAttackName = ""
+thirdAttackDescription = ""
+thirdAttackDamage = 0.0
+thirdAttackRange = [[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]]
+thirdAttackCost = 0
+chracterNode = ExtResource("2_o7jfw")
+attackScript = ExtResource("1_l4pnm")
+movement = [[0, 0, 0, 0, 0, 0, 0], [0, 1, 1, 1, 1, 1, 0], [0, 1, 1, 1, 1, 1, 0], [0, 1, 1, 0, 1, 1, 0], [0, 1, 1, 1, 1, 1, 0], [0, 1, 1, 1, 1, 1, 0], [0, 0, 0, 0, 0, 0, 0]]

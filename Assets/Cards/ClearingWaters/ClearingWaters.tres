@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=4 format=3 uid="uid://cf8x6d7ubdec0"]
+
+[ext_resource type="Texture2D" uid="uid://b3gamx7prjf07" path="res://Assets/Textures/131156450-checkered-chequered-seamless-pattern-squares-seamless-pattern-texture-checkerboard-chess-board.png" id="1_e41pf"]
+[ext_resource type="Script" path="res://Assets/Cards/ClearingWaters/ClearingWaters.gd" id="2_dcl5s"]
+[ext_resource type="Script" path="res://Assets/Scripts/CardData.gd" id="3_hsmnh"]
+
+[resource]
+script = ExtResource("3_hsmnh")
+cardID = 6
+cardName = "Clearing Waters"
+description = "Removes all Effects from a Card"
+image = ExtResource("1_e41pf")
+cardLevel = 3
+MagicCard = true
+instantEffect = true
+selectBeforActivation = true
+passive = false
+magicScript = ExtResource("2_dcl5s")
+type = 0
+health = 0.0
+firstAttackName = ""
+firstAttackDescription = ""
+firstAttackDamage = 0.0
+firstAttackRange = [[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]]
+firstAttackCost = 1
+secondAttackName = ""
+secondAttackDescription = ""
+secondAttackDamage = 0.0
+secondAttackRange = [[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]]
+secondAttackCost = 2
+thirdAttackName = ""
+thirdAttackDescription = ""
+thirdAttackDamage = 0.0
+thirdAttackRange = [[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]]
+thirdAttackCost = 3
+movement = [[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]]

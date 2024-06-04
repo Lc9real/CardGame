@@ -1,0 +1,444 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2i5fshnfrnmi"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/DeckCreator.gd" id="1_7eqg0"]
+[ext_resource type="Script" path="res://Assets/Scripts/mainScreen.gd" id="1_seelx"]
+[ext_resource type="Script" path="res://Assets/Scripts/MultiplayerMenü.gd" id="2_4wt4y"]
+
+[sub_resource type="Theme" id="Theme_47pyo"]
+
+[sub_resource type="Theme" id="Theme_yi3nr"]
+
+[node name="MainScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_seelx")
+
+[node name="MainMenu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SingelPlayer" type="Button" parent="MainMenu"]
+layout_mode = 1
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 350.0
+offset_bottom = 175.0
+theme = SubResource("Theme_47pyo")
+theme_override_font_sizes/font_size = 32
+text = "Singelplayer"
+
+[node name="Multiplayer" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 200.0
+offset_right = 350.0
+offset_bottom = 275.0
+theme = SubResource("Theme_47pyo")
+theme_override_font_sizes/font_size = 32
+text = "Multiplayer
+"
+
+[node name="Options" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 300.0
+offset_right = 350.0
+offset_bottom = 375.0
+theme = SubResource("Theme_47pyo")
+theme_override_font_sizes/font_size = 32
+text = "Options"
+
+[node name="Singelplayer" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FileName1" type="LineEdit" parent="Singelplayer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -800.0
+offset_top = 140.0
+offset_right = -300.0
+offset_bottom = 200.0
+grow_horizontal = 2
+theme = SubResource("Theme_yi3nr")
+theme_override_font_sizes/font_size = 32
+placeholder_text = "Enter Deck 1 Name"
+clear_button_enabled = true
+
+[node name="Load1" type="Button" parent="Singelplayer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -800.0
+offset_top = 230.0
+offset_right = -300.0
+offset_bottom = 290.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Load
+"
+
+[node name="FileName2" type="LineEdit" parent="Singelplayer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -800.0
+offset_top = 740.0
+offset_right = -300.0
+offset_bottom = 800.0
+grow_horizontal = 2
+theme = SubResource("Theme_yi3nr")
+theme_override_font_sizes/font_size = 32
+placeholder_text = "Enter Deck 2 Name"
+clear_button_enabled = true
+
+[node name="Load2" type="Button" parent="Singelplayer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -800.0
+offset_top = 830.0
+offset_right = -300.0
+offset_bottom = 890.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Load
+"
+
+[node name="Start Game" type="Button" parent="Singelplayer"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -37.5
+offset_right = -70.0
+offset_bottom = 37.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+disabled = true
+text = "Start Game
+"
+
+[node name="Multiplayer" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_4wt4y")
+
+[node name="Menü" type="Control" parent="Multiplayer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Host" type="Button" parent="Multiplayer/Menü"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 175.0
+offset_right = 350.0
+offset_bottom = 250.0
+theme = SubResource("Theme_47pyo")
+theme_override_font_sizes/font_size = 32
+text = "Host"
+
+[node name="Join" type="Button" parent="Multiplayer/Menü"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 175.0
+offset_right = 650.0
+offset_bottom = 250.0
+theme = SubResource("Theme_47pyo")
+theme_override_font_sizes/font_size = 32
+text = "Join
+"
+
+[node name="IP" type="LineEdit" parent="Multiplayer/Menü"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 1
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 450.0
+offset_bottom = 153.0
+theme_override_font_sizes/font_size = 32
+text = "127.0.0.1"
+placeholder_text = "Enter IP"
+
+[node name="Port" type="LineEdit" parent="Multiplayer/Menü"]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 0
+offset_left = 460.0
+offset_top = 100.0
+offset_right = 650.0
+offset_bottom = 153.0
+theme_override_font_sizes/font_size = 32
+text = "6969"
+placeholder_text = "Enter Port"
+
+[node name="Lobby" type="Control" parent="Multiplayer"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerCount" type="Label" parent="Multiplayer/Lobby"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -76.5
+offset_right = 76.5
+offset_bottom = 137.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 100
+text = "0/2"
+
+[node name="FileName" type="LineEdit" parent="Multiplayer/Lobby"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -860.0
+offset_top = 300.0
+offset_right = -360.0
+offset_bottom = 360.0
+grow_horizontal = 2
+theme = SubResource("Theme_yi3nr")
+theme_override_font_sizes/font_size = 32
+placeholder_text = "Enter Deck Name"
+clear_button_enabled = true
+
+[node name="Load" type="Button" parent="Multiplayer/Lobby"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -860.0
+offset_top = 390.0
+offset_right = -360.0
+offset_bottom = 450.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Load
+"
+
+[node name="Start Game" type="Button" parent="Multiplayer/Lobby"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -130.0
+offset_right = 250.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+disabled = true
+text = "Start Game
+"
+
+[node name="DeckCreator" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_7eqg0")
+
+[node name="ColorRect" type="ColorRect" parent="DeckCreator"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.266667, 0.266667, 0.266667, 0.701961)
+
+[node name="AllCards" type="Control" parent="DeckCreator"]
+layout_mode = 1
+anchor_left = 0.6
+anchor_top = 0.15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="DeckCreator/AllCards"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -30.0
+offset_right = -3.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.372549, 0.372549, 0.372549, 0.784314)
+
+[node name="AllCards" type="ScrollContainer" parent="DeckCreator/AllCards"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="All Cards" type="GridContainer" parent="DeckCreator/AllCards/AllCards" groups=["All Cards"]]
+layout_mode = 2
+columns = 5
+
+[node name="Deck" type="Control" parent="DeckCreator"]
+layout_mode = 1
+anchor_top = 0.15
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="DeckCreator/Deck"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -30.0
+offset_right = 20.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.372549, 0.372549, 0.372549, 0.784314)
+
+[node name="Deck" type="ScrollContainer" parent="DeckCreator/Deck"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Deck" type="GridContainer" parent="DeckCreator/Deck/Deck" groups=["Deck"]]
+layout_mode = 2
+mouse_filter = 0
+columns = 5
+
+[node name="FileName" type="LineEdit" parent="DeckCreator"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 25.0
+offset_right = 545.0
+offset_bottom = 85.0
+theme = SubResource("Theme_yi3nr")
+theme_override_font_sizes/font_size = 32
+placeholder_text = "Enter Deck Name"
+clear_button_enabled = true
+
+[node name="Save" type="Button" parent="DeckCreator"]
+layout_mode = 0
+offset_left = 570.0
+offset_top = 25.0
+offset_right = 750.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 32
+text = "Save"
+
+[node name="Load" type="Button" parent="DeckCreator"]
+layout_mode = 0
+offset_left = 765.0
+offset_top = 25.0
+offset_right = 945.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 32
+text = "Load
+"
+
+[node name="Clear" type="Button" parent="DeckCreator"]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 25.0
+offset_right = 1140.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 32
+text = "Clear
+"
+
+[node name="Delete" type="Button" parent="DeckCreator"]
+layout_mode = 0
+offset_left = 1150.0
+offset_top = 25.0
+offset_right = 1330.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 32
+text = "Delete
+"
+
+[node name="Deck Editor" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -320.0
+offset_top = 25.0
+offset_right = -70.0
+offset_bottom = 100.0
+grow_horizontal = 0
+theme = SubResource("Theme_47pyo")
+theme_override_font_sizes/font_size = 32
+text = "Deck Editor"
+
+[connection signal="pressed" from="MainMenu/SingelPlayer" to="." method="_on_singel_player_pressed"]
+[connection signal="pressed" from="MainMenu/Multiplayer" to="." method="_on_multiplayer_pressed"]
+[connection signal="pressed" from="MainMenu/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Singelplayer/Load1" to="." method="_on_load_1_pressed"]
+[connection signal="pressed" from="Singelplayer/Load2" to="." method="_on_load_2_pressed"]
+[connection signal="pressed" from="Singelplayer/Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="Multiplayer/Menü/Host" to="Multiplayer" method="_on_host_pressed"]
+[connection signal="pressed" from="Multiplayer/Menü/Join" to="Multiplayer" method="_on_join_pressed"]
+[connection signal="pressed" from="Multiplayer/Lobby/Load" to="Multiplayer" method="_on_load_pressed"]
+[connection signal="pressed" from="Multiplayer/Lobby/Start Game" to="Multiplayer" method="_on_start_game_pressed"]
+[connection signal="mouse_entered" from="DeckCreator/Deck/Deck" to="DeckCreator" method="_on_deck_mouse_entered"]
+[connection signal="mouse_exited" from="DeckCreator/Deck/Deck" to="DeckCreator" method="_on_deck_mouse_exited"]
+[connection signal="pressed" from="DeckCreator/Save" to="DeckCreator" method="_on_save_pressed"]
+[connection signal="pressed" from="DeckCreator/Load" to="DeckCreator" method="_on_load_pressed"]
+[connection signal="pressed" from="DeckCreator/Clear" to="DeckCreator" method="_on_clear_pressed"]
+[connection signal="pressed" from="DeckCreator/Delete" to="DeckCreator" method="_on_delete_pressed"]
+[connection signal="pressed" from="Deck Editor" to="." method="_on_deck_editor_pressed"]

@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=5 format=3 uid="uid://bx67b1jkhqtvm"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/CardData.gd" id="1_7mbas"]
+[ext_resource type="Texture2D" uid="uid://b5rvmg3c47r64" path="res://Assets/Cards/Eye/Eye.png" id="1_bwjmh"]
+[ext_resource type="Script" path="res://Assets/Cards/Eye/Eye.gd" id="1_cjqg0"]
+[ext_resource type="PackedScene" uid="uid://dh7hjcp6yq03s" path="res://Assets/Cards/Eye/Eye.tscn" id="2_7um37"]
+
+[resource]
+script = ExtResource("1_7mbas")
+cardID = 3
+cardName = "Eye"
+description = "All Seeing Eye"
+image = ExtResource("1_bwjmh")
+cardLevel = 4
+MagicCard = false
+instantEffect = false
+selectBeforActivation = false
+passive = false
+type = 2
+health = 100.0
+firstAttackName = "Schield"
+firstAttackDescription = "Creates a Schield"
+firstAttackDamage = 200.0
+firstAttackRange = [[1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1]]
+firstAttackCost = 2
+secondAttackName = "Eye Beam"
+secondAttackDescription = "Shots a Beam out of his Eye"
+secondAttackDamage = 250.0
+secondAttackRange = [[0, 0, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0]]
+secondAttackCost = 3
+thirdAttackName = ""
+thirdAttackDescription = ""
+thirdAttackDamage = 0.0
+thirdAttackRange = [[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]]
+thirdAttackCost = 0
+chracterNode = ExtResource("2_7um37")
+attackScript = ExtResource("1_cjqg0")
+movement = [[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0], [0, 1, 1, 0, 1, 1, 0], [0, 0, 0, 1, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]]
